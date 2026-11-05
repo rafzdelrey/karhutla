@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cegah Karhutla – Jaga Hutan, Jaga Rumah Orang Utan</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header>
+  <a class="logo" href="#hero">Cegah <b>Karhutla</b></a>
+  <nav>
+    <a href="#hero">Beranda</a>
+    <a href="#sebab">Memahami</a>
+    <a href="#utan">Orang Utan</a>
+    <a href="#poster">Poster</a>
+    <a href="#media">Media</a>
+  </nav>
+</header>
+
+<div class="dots" id="dots" aria-label="Navigasi bagian">
+  <a href="#hero" aria-label="Bagian 1"><span>01</span></a>
+  <a href="#sebab" aria-label="Bagian 2"><span>02</span></a>
+  <a href="#utan" aria-label="Bagian 3"><span>03</span></a>
+  <a href="#poster" aria-label="Bagian 4"><span>04</span></a>
+  <a href="#media" aria-label="Bagian 5"><span>05</span></a>
+</div>
+
+<section id="hero" data-terang="0">
+  <div class="bg"></div>
+  <h1 data-r="kiri">Jaga Hutan, Cegah Kebakaran Sebelum Terjadi</h1>
+  <a class="more" href="#sebab" data-r style="--d:.3s">Selengkapnya</a>
+</section>
+
+<section id="sebab" data-terang="0">
+  <div class="bg"></div>
+  <h2 data-r>Memahami Karhutla</h2>
+  <p class="lead" data-r style="--d:.12s">Kebakaran hutan dan lahan (karhutla) hampir selalu bermula dari ulah manusia, lalu meluas saat musim kemarau dan lahan gambut mengering.</p>
+  <div class="cards">
+    <article class="card c1" data-r style="--d:.2s">
+      <h3>Penyebab</h3>
+      <p>Pembukaan lahan dengan membakar, puntung rokok, dan lahan gambut kering yang mudah menyala.</p>
+      <a class="more" href="https://kemenlh.go.id/news/detail/mengapa-kebakaran-hutan-dan-lahan-selalu-terjadi">Selengkapnya</a>
+    </article>
+    <article class="card c2" data-r style="--d:.35s">
+      <h3>Dampak</h3>
+      <p>Asap mengganggu pernapasan, penerbangan terhenti, dan hutan melepas karbon dalam jumlah besar.</p>
+      <a class="more" href="https://baznas.go.id/artikel-show/Bahaya-Kabut-Asap-Karhutla-bagi-Kesehatan-dan-Aktivitas-Masyarakat/2712">Selengkapnya</a>
+    </article>
+    <article class="card c3" data-r style="--d:.5s">
+      <h3>Pencegahan</h3>
+      <p>Buka lahan tanpa bakar, jaga kelembapan gambut, dan laporkan titik api sedini mungkin.</p>
+      <a class="more" href="https://kemenlh.go.id/news/detail/pencegahan-kebakaran-hutan-dan-lahan-dimulai-dari-desa-dan-lahan-gambut">Selengkapnya</a>
+    </article>
+  </div>
+</section>
+
+<section id="utan" data-terang="1">
+  <div class="bg"></div>
+  <div class="foto" data-r="kanan" style="--d:.2s" role="img" aria-label="Orang utan"></div>
+  <div class="teks">
+    <h2 data-r="kiri">Rumah Orang Utan Ikut Terbakar</h2>
+    <p class="lead" data-r="kiri" style="--d:.12s">Orang utan hidup di hutan Kalimantan dan Sumatra. Saat hutan terbakar, mereka kehilangan pohon tempat makan, tidur, dan berlindung.</p>
+    <div class="fakta">
+      <div data-r="kiri" style="--d:.3s">Orang utan berstatus terancam punah kritis menurut IUCN.</div>
+      <div data-r="kiri" style="--d:.42s">Induk melahirkan sangat jarang, sehingga populasi lambat pulih.</div>
+      <div data-r="kiri" style="--d:.54s">Menjaga hutan berarti menjaga satwa yang menyebar biji dan menumbuhkan hutan.</div>
+    </div>
+  </div>
+</section>
+
+<section id="poster" data-terang="0">
+  <div class="phead" data-r>
+    <h2>Poster Kampanye</h2>
+    <p class="hint">Geser poster atau tekan tombol panah. Klik poster untuk memperbesar.</p>
+  </div>
+  <div class="gal" id="gal" data-r="zoom" style="--d:.15s" tabindex="0" aria-label="Galeri poster">
+    <button class="pcard" type="button"><img src="img/poster1.jpeg" alt="Poster karhutla 1" draggable="false"></button>
+    <button class="pcard" type="button"><img src="img/poster2.jpeg" alt="Poster karhutla 2" draggable="false"></button>
+    <button class="pcard" type="button"><img src="img/poster3.jpeg" alt="Poster karhutla 3" draggable="false"></button>
+    <button class="pcard" type="button"><img src="img/poster4.jpeg" alt="Poster karhutla 4" draggable="false"></button>
+  </div>
+  <div class="pnav" data-r style="--d:.4s">
+    <button class="arrow" id="prev" type="button" aria-label="Poster sebelumnya">&#8249;</button>
+    <span id="pcount" aria-live="polite">1 / 4</span>
+    <button class="arrow" id="next" type="button" aria-label="Poster berikutnya">&#8250;</button>
+  </div>
+</section>
+
+<section id="media" data-terang="1">
+  <div class="bg"></div>
+  <h2 data-r>Media Karhutla <a class="more" href="https://www.liputan6.com/tag/karhutla" target="_blank" rel="noopener">Selengkapnya</a></h2>
+  <div class="mwrap">
+    <div class="news">
+      <!-- Berita nyata per 5 Nov 2026. Ganti sendiri kalau ada berita yang lebih baru. -->
+      <div class="item" data-r style="--d:.15s"><img class="thumb" src="img/berita1.jpeg" alt="Foto berita 1" loading="lazy"><div class="tgl">03<small>NOV</small></div>
+        <div><span>Teknologi, Okezone</span>
+          <h3><a href="https://news.okezone.com/read/2026/11/03/337/3251882/brin-bakal-uji-coba-inovasi-dumakron-atasi-karhutla-di-kalimantan" target="_blank" rel="noopener">BRIN bakal uji coba inovasi Dumakron atasi karhutla di Kalimantan</a></h3>
+          <p>BRIN akan mencoba teknologi Dumakron dengan drone di Kalimantan untuk membantu penanganan karhutla.</p></div></div>
+      <div class="item" data-r style="--d:.3s"><img class="thumb" src="img/berita2.jpeg" alt="Foto berita 2" loading="lazy"><div class="tgl">27<small>OKT</small></div>
+        <div><span>Siaga Darurat, Antara</span>
+          <h3><a href="https://www.antaranews.com/berita/5815275/pemprov-kalsel-perpanjang-siaga-darurat-karhutla-hingga-30-november" target="_blank" rel="noopener">Pemprov Kalsel perpanjang siaga darurat karhutla hingga 30 November</a></h3>
+          <p>Status siaga darurat diperpanjang agar pemadaman terus berjalan dan api tidak meluas.</p></div></div>
+      <div class="item" data-r style="--d:.45s"><img class="thumb" src="img/berita3.jpeg" alt="Foto berita 3" loading="lazy"><div class="tgl">19<small>OKT</small></div>
+        <div><span>Penegakan Hukum, Okezone</span>
+          <h3><a href="https://news.okezone.com/read/2026/10/19/337/3248838/97-korporasi-diproses-hukum-diduga-biang-kerok-karhutla" target="_blank" rel="noopener">97 korporasi diproses hukum, diduga biang kerok karhutla</a></h3>
+          <p>Puluhan perusahaan di Kalimantan dan Sumatra disebut sudah masuk proses hukum.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<footer><span><b>Cegah Karhutla</b> – proyek edukasi</span><span>Sumber foto: tambahkan di sini</span></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

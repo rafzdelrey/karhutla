@@ -1,0 +1,142 @@
+/* ====== GANTI FOTO DI SINI ======
+   Taruh file di folder "foto" sebelah index.html, lalu sesuaikan nama file. */
+:root{
+  --foto-bg1:url("img/bg1.jpeg");               /* latar hero (bagian 01) */
+  --foto-bg2:url("img/bg2.jpeg");               /* latar bagian 02 */
+  --foto-orangutan:url("img/orangutan.jpeg");   /* orang utan di bagian 03 */
+  --foto-penyebab:url("img/penyebab.jpeg");     /* foto kartu 1 (bagian 02) */
+  --foto-dampak:url("img/dampak.jpeg");         /* foto kartu 2 */
+  --foto-pencegahan:url("img/pencegahan.jpeg"); /* foto kartu 3 */
+  --latar-media:url("img/bg-media.jpeg");       /* latar bagian 05 (media) */
+  --foto-berita1:url("img/berita1.jpeg");       /* foto berita 1-3 */
+  --foto-berita2:url("img/berita2.jpeg");
+  --foto-berita3:url("img/berita3.jpeg");
+  --latar-poster:url("img/bg-poster.jpeg");     /* latar bagian 04 (poster) */
+  --latar-hutan:url("img/bg-orangutan.jpeg");   /* latar hutan bagian 03 */
+
+  --arang:#1b1f27; --asap:#e9edf1; --bara:#ff7a1a; --api:#ffb02e; --teks:#fff; --abu:#8a929c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+body{font-family:Roboto,sans-serif;font-weight:300;color:var(--teks);background:var(--arang)}
+h1,h2,h3,nav a{font-family:Raleway,sans-serif}
+a{color:inherit;text-decoration:none}
+
+header{position:fixed;inset:0 0 auto 0;z-index:20;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,9vw);background:rgba(27,31,39,.96)}
+.logo{font-family:Raleway;font-weight:800;font-size:1.35rem;letter-spacing:.01em}
+.logo b{color:var(--bara)}
+nav{display:flex;gap:2.2rem}
+nav a{font-weight:500;font-size:1rem;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--bara);outline:none}
+
+/* penanda titik di kiri, seperti referensi */
+.dots{position:fixed;left:28px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:22px}
+.dots a{display:flex;align-items:center;gap:14px;font-family:Raleway;font-weight:700;color:var(--bara)}
+.dots a::before{content:"";width:16px;height:16px;background:#9a9a9a;flex:none}
+.dots a span{display:none}
+.dots a.on::before{background:var(--bara)}
+.dots a.on span{display:inline}
+.dots.terang a:not(.on)::before{background:#b9b9b9}
+
+section{overflow:hidden;isolation:isolate;min-height:100vh;scroll-snap-align:start;position:relative;display:flex;flex-direction:column;justify-content:center;padding:120px max(24px,9vw) 60px 12vw}
+.bg{position:absolute;inset:-14% 0;will-change:transform;background-size:cover;background-position:center;z-index:-1}
+h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;margin-bottom:1.4rem}
+.lead{font-size:clamp(1.1rem,1.7vw,1.5rem);line-height:1.8;max-width:46ch;margin-bottom:2.4rem}
+.more{color:var(--api);font-family:Raleway;font-weight:700;font-size:1.15rem}
+.more:hover{text-decoration:underline}
+
+/* 01 hero */
+#hero{background:#2a1a10}
+#hero .bg{background-image:linear-gradient(90deg,rgba(20,12,8,.88),rgba(20,12,8,.25) 70%),var(--foto-bg1),linear-gradient(160deg,#3b1d0c,#a1370b 60%,#ff8a1e)}
+#hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.15;max-width:15ch;margin-bottom:2.2rem}
+
+/* 02 kartu */
+#sebab{background:#16323f}
+#sebab .bg{background:linear-gradient(180deg,rgba(18,40,52,.86),rgba(18,40,52,.96)),var(--foto-bg2) center/cover,#16323f}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{position:relative;min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;background:#243b46;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.15));z-index:0}
+.card>*{position:relative}
+.card h3{font-size:1.6rem;margin-bottom:.5rem}
+.card p{line-height:1.6;margin-bottom:.9rem}
+.c1{background:var(--foto-penyebab) center/cover,linear-gradient(160deg,#5a2a10,#a8430c)}
+.c2{background:var(--foto-dampak) center/cover,linear-gradient(160deg,#3a3f46,#6b4a2c)}
+.c3{background:var(--foto-pencegahan) center/cover,linear-gradient(160deg,#1e4a35,#3f7d4f)}
+
+/* 03 orang utan: latar foto hutan, orang utan PNG di kanan (seperti bagian Media Freeport) */
+#utan{background:#cfdbe2;color:#111;overflow:hidden}
+#utan .bg{z-index:0;background:linear-gradient(90deg,rgba(242,245,247,.96) 0%,rgba(242,245,247,.88) 38%,rgba(242,245,247,.15) 72%),var(--latar-hutan) center/cover,linear-gradient(180deg,#f2f5f7,#9fb5a8)}
+#utan h2{color:#000}
+#utan .lead{color:#333}
+#utan .foto{position:absolute;right:5vw;bottom:0;height:78vh;width:min(44vw,620px);z-index:1;background:var(--foto-orangutan) center bottom/contain no-repeat;filter:drop-shadow(0 18px 24px rgba(0,0,0,.28))}
+#utan .teks{max-width:min(50vw,620px);position:relative;z-index:2}
+.fakta{display:grid;gap:14px;margin-top:1rem}
+.fakta div{border-left:4px solid var(--bara);padding-left:14px;color:#222;line-height:1.6;font-size:1.05rem}
+
+/* 04 media */
+#media{background:#f2f5f7;color:#111}
+#media .bg{background:linear-gradient(90deg,rgba(242,245,247,.95),rgba(242,245,247,.50)),var(--latar-media) center/cover,#f2f5f7}
+#media h2{color:#000;display:flex;align-items:baseline;gap:2rem}
+#media h2 a{font-size:1.1rem}
+.mwrap{display:block}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.item{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start}
+.thumb{grid-column:1/-1;display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#c9d3da;border-radius:2px}
+.tgl{flex:none;width:72px;height:72px;background:var(--bara);color:#fff;font-family:Raleway;font-weight:800;text-align:center;padding-top:12px;line-height:1.1;font-size:1.5rem}
+.tgl small{display:block;font-size:1rem}
+.item h3{font-size:1.25rem;line-height:1.35;margin:2px 0 6px;color:#1a1a1a}
+.item span{color:var(--abu);font-size:1.05rem}
+.item h3 a:hover,.item h3 a:focus-visible{color:var(--bara);text-decoration:underline}
+.item p{color:#555;margin-top:4px;line-height:1.55}
+/* 04 poster: carousel formal, poster aktif di tengah layar */
+#poster{padding:100px 0 28px;overflow:hidden;align-items:stretch;background:linear-gradient(rgba(27,31,39,.72),rgba(27,31,39,.85)),var(--latar-poster) center/cover,radial-gradient(60% 55% at 50% 58%,#3a2312 0%,var(--arang) 70%)}
+.phead{text-align:center;padding:0 24px}
+.phead h2{margin-bottom:.4rem}
+.hint{color:var(--abu);font-size:1.05rem}
+.gal{position:relative;width:100%;height:min(64vh,600px);margin:18px 0 10px;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
+.gal.drag{cursor:grabbing}
+.pcard{--o:0;--dx:0px;position:absolute;left:50%;top:50%;height:100%;aspect-ratio:3/4;padding:0;border:0;overflow:hidden;border-radius:4px;background:#2a2f38;cursor:inherit;
+  transform:translate(-50%,-50%) translateX(calc(var(--o) * 78% + var(--dx))) scale(1);
+  opacity:1;box-shadow:0 24px 50px rgba(0,0,0,.5);
+  transition:transform .6s cubic-bezier(.22,.7,.2,1),opacity .6s,filter .6s}
+.pcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.pcard.side{transform:translate(-50%,-50%) translateX(calc(var(--o) * 78% + var(--dx))) scale(.78);opacity:.45;filter:brightness(.6)}
+.pcard.hide{transform:translate(-50%,-50%) translateX(calc(var(--o) * 78% + var(--dx))) scale(.7);opacity:0;pointer-events:none}
+.gal.drag .pcard{transition:none}
+.pcard:focus-visible{outline:2px solid var(--api);outline-offset:4px}
+.pnav{display:flex;align-items:center;justify-content:center;gap:22px;font-family:Raleway;font-weight:700;color:var(--api)}
+.arrow{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--bara);background:transparent;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s}
+.arrow:hover,.arrow:focus-visible{background:var(--bara);outline:none}
+#pcount{min-width:3.5rem;text-align:center}
+.lightbox{position:fixed;inset:0;overflow:hidden;z-index:50;background:rgba(0,0,0,.88);display:none;place-items:center;padding:24px;cursor:zoom-out}
+.lightbox.on{display:grid}
+.lightbox img{display:block;width:auto;height:auto;max-width:92vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lightbox::after{content:"Klik di mana saja untuk menutup";position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#aaa;font-size:.9rem}
+footer{background:var(--arang);padding:36px max(24px,9vw) 36px 12vw;color:var(--abu);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer b{color:#fff}
+
+@media(max-width:900px){
+  nav{display:none}
+  .dots{display:none}
+  section{padding:110px 24px 50px}
+  .cards,.news{grid-template-columns:1fr}
+  #utan .foto{position:relative;right:auto;width:100%;height:340px;margin-top:2rem}
+  #utan .bg{background:linear-gradient(180deg,rgba(242,245,247,.95),rgba(242,245,247,.55)),var(--latar-hutan) center/cover,#cfdbe2}
+  #utan .teks{max-width:none}
+  footer{padding-left:24px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== EFEK PINDAH BAGIAN ===== */
+#progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:30;background:linear-gradient(90deg,var(--bara),var(--api));transform-origin:left;transform:scaleX(0)}
+#hero h1,#hero .more{position:relative;z-index:1}
+
+/* muncul saat bagian masuk layar: arah beda tiap elemen */
+.js [data-r]{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js [data-r=kiri]{transform:translateX(-60px)}
+.js [data-r=kanan]{transform:translateX(70px)}
+.js [data-r=zoom]{transform:scale(.92)}
+.js [data-r].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .js [data-r]{opacity:1;transform:none;transition:none}
+}
